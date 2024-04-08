@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "beximitesmagic",
+	"version": "${version}",
+	"name": "Beximite's Magic",
+	"description": "This is a magic mod for Minecraft made by Beximite.",
+	"authors": [
+		"Brendan McCall"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/beximitesmagic/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "net.brendanmccall.beximitesmagic.BeximitesMagic",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "net.brendanmccall.beximitesmagic.BeximitesMagicDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"beximitesmagic.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.9",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.9.23"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
