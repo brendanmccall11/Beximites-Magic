@@ -1,15 +1,15 @@
 {
   "textures": {
-    "0": "beximitesmagic:item/staff/texture1",
-    "1": "beximitesmagic:item/staff/texture2",
-    "2": "beximitesmagic:item/staff/texture3",
-    "3": "beximitesmagic:item/staff/texture4",
-    "4": "beximitesmagic:item/staff/texture5",
-    "5": "beximitesmagic:item/staff/texture6",
-    "6": "beximitesmagic:item/staff/texture7",
-    "7": "beximitesmagic:item/staff/texture8",
-    "8": "beximitesmagic:item/staff/texture9",
-    "9": "beximitesmagic:item/staff/texture10"
+    "0": "beximitesmagic:item/staff/diamond/texture1",
+    "1": "beximitesmagic:item/staff/diamond/texture2",
+    "2": "beximitesmagic:item/staff/diamond/texture3",
+    "3": "beximitesmagic:item/staff/diamond/texture4",
+    "4": "beximitesmagic:item/staff/diamond/texture5",
+    "5": "beximitesmagic:item/staff/diamond/texture6",
+    "6": "beximitesmagic:item/staff/diamond/texture7",
+    "7": "beximitesmagic:item/staff/diamond/texture8",
+    "8": "beximitesmagic:item/staff/diamond/texture9",
+    "9": "beximitesmagic:item/staff/diamond/texture10"
   },
   "elements": [
     {
