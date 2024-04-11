@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "beximitesmagic:staff_iron_turquoise"
+  },
+  "result": {
+    "item": "beximitesmagic:staff_diamond_turquoise"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}
