@@ -6,13 +6,13 @@ import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 
 object BeximitesMagic : ModInitializer {
-	public val mod_id = "beximitesmagic";
-    public val logger = LoggerFactory.getLogger(mod_id)
+	public val modID = "beximitesmagic"
+	public val logger = LoggerFactory.getLogger(modID)
 
 	override fun onInitialize() {
 		logger.info("Loading Beximite's Magic...")
 
-		ModItemGroups.registerModItemGroups();
-		ModItems.registerModItems();
+		ModItemGroups.registerModItemGroups()
+		ModItems.registerModItems()
 	}
 }
