@@ -32,7 +32,8 @@ object ModItemGroups {
                 staffItems.values.forEach { item ->
                     entries.add(item)
                 }
-                entries.add(ModItems.shard_fire);
+                entries.add(ModItems.shard_water)
+                entries.add(ModItems.shard_fire)
 
             }
             .build()

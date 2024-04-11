@@ -10,12 +10,12 @@ import net.minecraft.util.Identifier
 object ModItems {
 
     fun registerModItems() {
-        BeximitesMagic.logger.info("Registering Mod Items for ${BeximitesMagic.mod_id}");
-        registerStaffItems();
+        BeximitesMagic.logger.info("Registering Mod Items for ${BeximitesMagic.mod_id}")
+        registerStaffItems()
     }
 
     fun registerItem(name: String, item: Item): Item {
-        return Registry.register(Registries.ITEM, Identifier(BeximitesMagic.mod_id, name), item);
+        return Registry.register(Registries.ITEM, Identifier(BeximitesMagic.mod_id, name), item)
     }
 
     // Initialize map for staffs
@@ -27,11 +27,12 @@ object ModItems {
     fun registerStaffItems()
     {
         staffTypes.forEach() { staffType ->
-            staffColors.forEach { color ->
-                val name = "staff_${staffType}${if (color.isNotEmpty()) "_$color" else ""}"
+            staffColors.forEach { staffColor ->
+                val name = "staff_${staffType}${if (staffColor.isNotEmpty()) "_$staffColor" else ""}"
                 staffItems[name] = registerItem(name, Item(FabricItemSettings().maxCount(1)))
             }
         }
     }
-    val shard_fire: Item = registerItem("shard_fire", Item(FabricItemSettings()));
+    val shard_water: Item = registerItem("shard_water", Item(FabricItemSettings()))
+    val shard_fire: Item = registerItem("shard_fire", Item(FabricItemSettings()))
 }
