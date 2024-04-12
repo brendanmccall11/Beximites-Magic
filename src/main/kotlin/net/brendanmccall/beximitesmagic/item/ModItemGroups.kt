@@ -1,10 +1,11 @@
 package net.brendanmccall.beximitesmagic.item
 
 import net.brendanmccall.beximitesmagic.BeximitesMagic
+import net.brendanmccall.beximitesmagic.item.ModItems.crystalShardItems
 import net.brendanmccall.beximitesmagic.item.ModItems.registerItem
-import net.brendanmccall.beximitesmagic.item.ModItems.staffElements
+import net.brendanmccall.beximitesmagic.item.ModItems.elements
 import net.brendanmccall.beximitesmagic.item.ModItems.staffItems
-import net.brendanmccall.beximitesmagic.item.ModItems.staffMaterials
+import net.brendanmccall.beximitesmagic.item.ModItems.materials
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.minecraft.item.Item
@@ -32,8 +33,9 @@ object ModItemGroups {
                 staffItems.values.forEach { item ->
                     entries.add(item)
                 }
-                entries.add(ModItems.water_crystal_shard)
-                entries.add(ModItems.fire_crystal_shard)
+                crystalShardItems.values.forEach { item ->
+                    entries.add(item)
+                }
             }
             .build()
     )

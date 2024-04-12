@@ -54,5 +54,14 @@
   "item.beximitesmagic.netherite_life_staff": "Netherite Life Staff",
   "item.beximitesmagic.netherite_death_staff": "Netherite Death Staff",
   "item.beximitesmagic.water_crystal_shard": "Water Crystal Shard",
-  "item.beximitesmagic.fire_crystal_shard": "Fire Crystal Shard"
+  "item.beximitesmagic.ice_crystal_shard": "Ice Crystal Shard",
+  "item.beximitesmagic.terra_crystal_shard": "Terra Crystal Shard",
+  "item.beximitesmagic.fire_crystal_shard": "Fire Crystal Shard",
+  "item.beximitesmagic.electric_crystal_shard": "Electric Crystal Shard",
+  "item.beximitesmagic.mind_crystal_shard": "Mind Crystal Shard",
+  "item.beximitesmagic.chaos_crystal_shard": "Chaos Crystal Shard",
+  "item.beximitesmagic.order_crystal_shard": "Order Crystal Shard",
+  "item.beximitesmagic.spacetime_crystal_shard": "Spacetime Crystal Shard",
+  "item.beximitesmagic.life_crystal_shard": "Life Crystal Shard",
+  "item.beximitesmagic.death_crystal_shard": "Death Crystal Shard"
 }
