@@ -1,5 +1,6 @@
 package net.brendanmccall.beximitesmagic
 
+import net.brendanmccall.beximitesmagic.block.ModBlocks
 import net.brendanmccall.beximitesmagic.item.ModItemGroups
 import net.brendanmccall.beximitesmagic.item.ModItems
 import net.fabricmc.api.ModInitializer
@@ -14,5 +15,6 @@ object BeximitesMagic : ModInitializer {
 
 		ModItemGroups.registerModItemGroups()
 		ModItems.registerModItems()
+		ModBlocks.registerModBlocks()
 	}
 }

@@ -63,5 +63,7 @@
   "item.beximitesmagic.order_crystal_shard": "Order Crystal Shard",
   "item.beximitesmagic.spacetime_crystal_shard": "Spacetime Crystal Shard",
   "item.beximitesmagic.life_crystal_shard": "Life Crystal Shard",
-  "item.beximitesmagic.death_crystal_shard": "Death Crystal Shard"
+  "item.beximitesmagic.death_crystal_shard": "Death Crystal Shard",
+
+  "block.beximitesmagic.water_crystal_ore": "Water Crystal Ore"
 }
