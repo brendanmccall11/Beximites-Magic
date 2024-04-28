@@ -2,6 +2,7 @@ package net.brendanmccall.beximitesmagic.item
 
 import net.brendanmccall.beximitesmagic.BeximitesMagic
 import net.brendanmccall.beximitesmagic.block.ModBlocks
+import net.brendanmccall.beximitesmagic.block.ModBlocks.oreBlocks
 import net.brendanmccall.beximitesmagic.item.ModItems.crystalShardItems
 import net.brendanmccall.beximitesmagic.item.ModItems.registerItem
 import net.brendanmccall.beximitesmagic.item.ModItems.elements
@@ -37,7 +38,9 @@ object ModItemGroups {
                 crystalShardItems.values.forEach { item ->
                     entries.add(item)
                 }
-                entries.add(ModBlocks.water_crystal_ore)
+                oreBlocks.values.forEach { block ->
+                    entries.add(block)
+                }
             }
             .build()
     )

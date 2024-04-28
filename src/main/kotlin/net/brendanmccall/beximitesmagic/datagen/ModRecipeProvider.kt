@@ -44,6 +44,7 @@ class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output)
 
     // Generating recipe json files
     override fun generate(exporter: RecipeExporter) {
+        // Basic staff crafting recipe
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, getStaffItem(null, null), 1)
             .pattern("## ")
             .pattern(" # ")

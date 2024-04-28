@@ -20,7 +20,7 @@ object ModItems {
         return Registry.register(Registries.ITEM, Identifier(BeximitesMagic.modID, name), item)
     }
 
-    // Initialize map and lists for staffs, crystals, crystal shards
+    // Initialize maps and lists for staffs, crystals, crystal shards
     public val materials = listOf("", "iron", "diamond", "netherite")
     public val elements = listOf("", "standard", "water", "ice", "terra", "fire",
         "electric", "mind", "chaos", "order", "spacetime", "life", "death")
@@ -28,23 +28,23 @@ object ModItems {
     public val crystalShardItems: MutableMap<String, Item> = mutableMapOf()
 
     // Helper functions for getting items from maps
-    fun getStaffItem(material: String?, element: String?): Item? {
-        if (material != null && element != null) {
-            return ModItems.staffItems["${material}_${element}_staff"]
+    public fun getStaffItem(material: String?, element: String?): Item? {
+        return if (material != null && element != null) {
+            ModItems.staffItems["${material}_${element}_staff"]
         }
         else if (material != null && element == null) {
-            return ModItems.staffItems["${material}_staff"]
+            ModItems.staffItems["${material}_staff"]
         }
         else {
-            return ModItems.staffItems["staff"]
+            ModItems.staffItems["staff"]
         }
     }
-    fun getCrystalShardItem(element: String): Item? {
+    public fun getCrystalShardItem(element: String): Item? {
         return ModItems.crystalShardItems["${element}_crystal_shard"]
     }
 
     // Registering Items
-    fun registerStaffItems() {
+    private fun registerStaffItems() {
         materials.forEach { staffMaterial ->
             elements.forEach { staffElement ->
                 val name = "${if (staffMaterial.isNotEmpty()) "$staffMaterial" + "_" else ""}" +
@@ -53,7 +53,7 @@ object ModItems {
             }
         }
     }
-    fun registerCrystalShardItems() {
+    private fun registerCrystalShardItems() {
         elements.drop(2).forEach { crystalElement ->
             val name = "$crystalElement" + "_" + "crystal_shard"
             crystalShardItems[name] = registerItem(name, Item(FabricItemSettings()))
