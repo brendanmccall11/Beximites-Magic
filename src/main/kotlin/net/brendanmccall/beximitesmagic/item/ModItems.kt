@@ -27,9 +27,25 @@ object ModItems {
     public val staffItems: MutableMap<String, Item> = mutableMapOf()
     public val crystalShardItems: MutableMap<String, Item> = mutableMapOf()
 
+    // Helper functions for getting items from maps
+    fun getStaffItem(material: String?, element: String?): Item? {
+        if (material != null && element != null) {
+            return ModItems.staffItems["${material}_${element}_staff"]
+        }
+        else if (material != null && element == null) {
+            return ModItems.staffItems["${material}_staff"]
+        }
+        else {
+            return ModItems.staffItems["staff"]
+        }
+    }
+    fun getCrystalShardItem(element: String): Item? {
+        return ModItems.crystalShardItems["${element}_crystal_shard"]
+    }
+
     // Registering Items
     fun registerStaffItems() {
-        materials.forEach() { staffMaterial ->
+        materials.forEach { staffMaterial ->
             elements.forEach { staffElement ->
                 val name = "${if (staffMaterial.isNotEmpty()) "$staffMaterial" + "_" else ""}" +
                         "${if (staffElement.isNotEmpty()) "$staffElement" + "_" else ""}staff"
@@ -38,7 +54,7 @@ object ModItems {
         }
     }
     fun registerCrystalShardItems() {
-        elements.drop(2).forEach() { crystalElement ->
+        elements.drop(2).forEach { crystalElement ->
             val name = "$crystalElement" + "_" + "crystal_shard"
             crystalShardItems[name] = registerItem(name, Item(FabricItemSettings()))
         }
