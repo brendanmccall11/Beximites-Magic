@@ -23,7 +23,7 @@ object ModItems {
     // Initialize maps and lists for staffs, crystals, crystal shards
     public val materials = listOf("", "iron", "diamond", "netherite")
     public val elements = listOf("", "standard", "water", "ice", "terra", "fire",
-        "electric", "mind", "chaos", "order", "spacetime", "life", "death")
+        "mind", "chaos", "order", "spacetime", "life", "death")
     public val staffItems: MutableMap<String, Item> = mutableMapOf()
     public val crystalShardItems: MutableMap<String, Item> = mutableMapOf()
 
