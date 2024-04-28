@@ -13,6 +13,7 @@ object ModItems {
         BeximitesMagic.logger.info("Registering Mod Items for ${BeximitesMagic.modID}")
 
         registerStaffItems()
+        registerCrystalItems()
         registerCrystalShardItems()
     }
 
@@ -25,6 +26,7 @@ object ModItems {
     public val elements = listOf("", "standard", "water", "ice", "terra", "fire",
         "mind", "chaos", "order", "spacetime", "life", "death")
     public val staffItems: MutableMap<String, Item> = mutableMapOf()
+    public val crystalItems: MutableMap<String, Item> = mutableMapOf()
     public val crystalShardItems: MutableMap<String, Item> = mutableMapOf()
 
     // Helper functions for getting items from maps
@@ -35,9 +37,15 @@ object ModItems {
         else if (material != null && element == null) {
             ModItems.staffItems["${material}_staff"]
         }
+        else if (material == null && element != null) {
+            ModItems.staffItems["${element}_staff"]
+        }
         else {
             ModItems.staffItems["staff"]
         }
+    }
+    public fun getCrystalItem(element: String): Item? {
+        return ModItems.crystalItems["${element}_crystal"]
     }
     public fun getCrystalShardItem(element: String): Item? {
         return ModItems.crystalShardItems["${element}_crystal_shard"]
@@ -51,6 +59,12 @@ object ModItems {
                         "${if (staffElement.isNotEmpty()) "$staffElement" + "_" else ""}staff"
                 staffItems[name] = registerItem(name, Item(FabricItemSettings().maxCount(1)))
             }
+        }
+    }
+    private fun registerCrystalItems() {
+        elements.drop(2).forEach { crystalElement ->
+            val name = "$crystalElement" + "_" + "crystal"
+            crystalItems[name] = registerItem(name, Item(FabricItemSettings()))
         }
     }
     private fun registerCrystalShardItems() {

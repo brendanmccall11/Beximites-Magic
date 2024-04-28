@@ -1,13 +1,12 @@
 package net.brendanmccall.beximitesmagic.datagen
 
 import net.brendanmccall.beximitesmagic.item.ModItems.elements
+import net.brendanmccall.beximitesmagic.item.ModItems.getCrystalItem
+import net.brendanmccall.beximitesmagic.item.ModItems.getCrystalShardItem
 import net.brendanmccall.beximitesmagic.item.ModItems.getStaffItem
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
-import net.minecraft.data.server.recipe.RecipeExporter
-import net.minecraft.data.server.recipe.RecipeProvider
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder
-import net.minecraft.data.server.recipe.SmithingTransformRecipeJsonBuilder
+import net.minecraft.data.server.recipe.*
 import net.minecraft.item.Item
 import net.minecraft.item.Items
 import net.minecraft.recipe.Ingredient
@@ -53,6 +52,22 @@ class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output)
             .criterion(hasItem(Items.STICK), RecipeProvider.conditionsFromItem(Items.STICK))
             .offerTo(exporter, Identifier(getRecipeName(getStaffItem(null, null))))
 
+        // Elemental staff crafting recipes
+        elements.drop(2).forEach { crystalElement ->
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, getStaffItem(null, crystalElement), 1)
+                .input(getStaffItem(null, null))
+                .input(getCrystalItem(crystalElement))
+                .criterion(
+                    hasItem(getStaffItem(null, null)),
+                    RecipeProvider.conditionsFromItem(getStaffItem(null, null))
+                )
+                .criterion(
+                    hasItem(getCrystalItem(crystalElement)),
+                    RecipeProvider.conditionsFromItem(getCrystalItem(crystalElement))
+                )
+                .offerTo(exporter, Identifier(getRecipeName(getStaffItem(null, crystalElement))))
+        }
+
         // Staff smithing recipes
         offerIronUpgradeRecipe(exporter, getStaffItem(null, null), RecipeCategory.COMBAT,
             getStaffItem("iron", null))
@@ -77,6 +92,13 @@ class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output)
                 getStaffItem("diamond", staffElement),
                 RecipeCategory.COMBAT,
                 getStaffItem("netherite", staffElement))
+        }
+
+        // Crystal crafting recipes
+        elements.drop(2).forEach { crystalElement ->
+            offerCompactingRecipe(exporter, RecipeCategory.MISC,
+                getCrystalItem(crystalElement),
+                getCrystalShardItem(crystalElement))
         }
     }
 }

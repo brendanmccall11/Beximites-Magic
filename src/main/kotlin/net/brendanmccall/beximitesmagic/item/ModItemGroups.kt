@@ -3,6 +3,7 @@ package net.brendanmccall.beximitesmagic.item
 import net.brendanmccall.beximitesmagic.BeximitesMagic
 import net.brendanmccall.beximitesmagic.block.ModBlocks
 import net.brendanmccall.beximitesmagic.block.ModBlocks.oreBlocks
+import net.brendanmccall.beximitesmagic.item.ModItems.crystalItems
 import net.brendanmccall.beximitesmagic.item.ModItems.crystalShardItems
 import net.brendanmccall.beximitesmagic.item.ModItems.registerItem
 import net.brendanmccall.beximitesmagic.item.ModItems.elements
@@ -33,6 +34,9 @@ object ModItemGroups {
             .entries { _, entries ->
                 // Adding items to creative mode group
                 staffItems.values.forEach { item ->
+                    entries.add(item)
+                }
+                crystalItems.values.forEach { item ->
                     entries.add(item)
                 }
                 crystalShardItems.values.forEach { item ->
