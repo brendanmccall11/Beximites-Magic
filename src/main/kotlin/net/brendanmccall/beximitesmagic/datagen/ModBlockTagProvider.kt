@@ -26,14 +26,14 @@ class ModBlockTagProvider(output: FabricDataOutput, registriesFuture: Completabl
             getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL).add(getOreBlock("deepslate", oreElement))
         }
         elements.drop(2).forEach { oreElement ->
-            getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(getOreBlock("nether", oreElement))
-            getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL).add(getOreBlock("nether", oreElement))
+            getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(getOreBlock("netherrack", oreElement))
+            getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL).add(getOreBlock("netherrack", oreElement))
         }
         elements.drop(2).forEach { oreElement ->
-            getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(getOreBlock("end", oreElement))
+            getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(getOreBlock("end_stone", oreElement))
             getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK,
                 Identifier("fabric", "needs_tool_level_4")))
-                .add(getOreBlock("end", oreElement))
+                .add(getOreBlock("end_stone", oreElement))
         }
     }
 }

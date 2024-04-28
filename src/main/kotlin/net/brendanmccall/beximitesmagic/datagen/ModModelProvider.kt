@@ -21,10 +21,10 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             blockStateModelGenerator.registerSimpleCubeAll(getOreBlock("deepslate", oreElement))
         }
         elements.drop(2).forEach { oreElement ->
-            blockStateModelGenerator.registerSimpleCubeAll(getOreBlock("nether", oreElement))
+            blockStateModelGenerator.registerSimpleCubeAll(getOreBlock("netherrack", oreElement))
         }
         elements.drop(2).forEach { oreElement ->
-            blockStateModelGenerator.registerSimpleCubeAll(getOreBlock("end", oreElement))
+            blockStateModelGenerator.registerSimpleCubeAll(getOreBlock("end_stone", oreElement))
         }
     }
 

@@ -46,14 +46,14 @@ class ModLootTableProvider(dataOutput: FabricDataOutput) : FabricBlockLootTableP
         }
         elements.drop(2).forEach { oreElement ->
             addDrop(
-                getOreBlock("nether", oreElement),
-                copperLikeOreDrops(getOreBlock("nether", oreElement),
+                getOreBlock("netherrack", oreElement),
+                copperLikeOreDrops(getOreBlock("netherrack", oreElement),
                     getCrystalShardItem(oreElement), 2.0f, 3.0f))
         }
         elements.drop(2).forEach { oreElement ->
             addDrop(
-                getOreBlock("end", oreElement),
-                copperLikeOreDrops(getOreBlock("end", oreElement),
+                getOreBlock("end_stone", oreElement),
+                copperLikeOreDrops(getOreBlock("end_stone", oreElement),
                     getCrystalShardItem(oreElement), 3.0f, 4.0f))
         }
     }
