@@ -36,6 +36,7 @@ object ModItemGroups {
                 staffItems.values.forEach { item ->
                     entries.add(item)
                 }
+                entries.add(ModItems.crystal)
                 crystalItems.values.forEach { item ->
                     entries.add(item)
                 }

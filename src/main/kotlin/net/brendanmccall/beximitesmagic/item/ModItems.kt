@@ -61,6 +61,7 @@ object ModItems {
             }
         }
     }
+    val crystal: Item = registerItem("crystal", Item(FabricItemSettings()))
     private fun registerCrystalItems() {
         elements.drop(2).forEach { crystalElement ->
             val name = "$crystalElement" + "_" + "crystal"

@@ -1,9 +1,11 @@
 package net.brendanmccall.beximitesmagic.datagen
 
+import net.brendanmccall.beximitesmagic.item.ModItems
 import net.brendanmccall.beximitesmagic.item.ModItems.elements
 import net.brendanmccall.beximitesmagic.item.ModItems.getCrystalItem
 import net.brendanmccall.beximitesmagic.item.ModItems.getCrystalShardItem
 import net.brendanmccall.beximitesmagic.item.ModItems.getStaffItem
+import net.brendanmccall.beximitesmagic.item.ModItems.materials
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
 import net.minecraft.data.server.recipe.*
@@ -53,8 +55,10 @@ class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output)
             .offerTo(exporter, Identifier(getRecipeName(getStaffItem(null, null))))
 
         // Elemental staff crafting recipes
+        // Wooden staff
         elements.drop(2).forEach { crystalElement ->
-            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, getStaffItem(null, crystalElement), 1)
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC,
+                getStaffItem(null, crystalElement), 1)
                 .input(getStaffItem(null, null))
                 .input(getCrystalItem(crystalElement))
                 .criterion(
@@ -66,6 +70,24 @@ class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output)
                     RecipeProvider.conditionsFromItem(getCrystalItem(crystalElement))
                 )
                 .offerTo(exporter, Identifier(getRecipeName(getStaffItem(null, crystalElement))))
+        }
+        // Iron, Diamond, Netherite staffs
+        materials.drop(1).forEach { staffMaterial ->
+            elements.drop(2).forEach { crystalElement ->
+                ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC,
+                    getStaffItem(staffMaterial, crystalElement), 1)
+                    .input(getStaffItem(staffMaterial, null))
+                    .input(getCrystalItem(crystalElement))
+                    .criterion(
+                        hasItem(getStaffItem(staffMaterial, null)),
+                        RecipeProvider.conditionsFromItem(getStaffItem(staffMaterial, null))
+                    )
+                    .criterion(
+                        hasItem(getCrystalItem(crystalElement)),
+                        RecipeProvider.conditionsFromItem(getCrystalItem(crystalElement))
+                    )
+                    .offerTo(exporter, Identifier(getRecipeName(getStaffItem(staffMaterial, crystalElement))))
+            }
         }
 
         // Staff smithing recipes
@@ -95,6 +117,17 @@ class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output)
         }
 
         // Crystal crafting recipes
+        // Standard crystal
+        val crystalRecipe = ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.crystal, 1)
+        elements.drop(2).dropLast(1).forEach { crystalElement ->
+                crystalRecipe.input(getCrystalShardItem(crystalElement))
+        }
+        elements.drop(2).dropLast(1).forEach { crystalElement ->
+            crystalRecipe.criterion(hasItem(getCrystalShardItem(crystalElement)),
+                RecipeProvider.conditionsFromItem(getCrystalShardItem(crystalElement)))
+        }
+        crystalRecipe.offerTo(exporter, Identifier(getRecipeName(ModItems.crystal)))
+        // Elemental crystals
         elements.drop(2).forEach { crystalElement ->
             offerCompactingRecipe(exporter, RecipeCategory.MISC,
                 getCrystalItem(crystalElement),

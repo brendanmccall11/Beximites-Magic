@@ -34,7 +34,7 @@ object ModBlocks {
     }
 
     // Initialize maps and lists for ore blocks
-    private val oreTypes = listOf("", "deepslate", "netherrack", "end_stone")
+    val oreTypes = listOf("", "deepslate", "netherrack", "end_stone")
     val oreBlocks: MutableMap<String, Block> = mutableMapOf()
 
     // Helper functions for getting blocks from maps
