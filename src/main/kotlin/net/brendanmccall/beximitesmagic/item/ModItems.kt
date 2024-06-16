@@ -74,4 +74,8 @@ object ModItems {
             crystalShardItems[name] = registerItem(name, Item(FabricItemSettings()))
         }
     }
+
+    // Registering Unused Items
+    /* val tomato: Item = registerItem("tomato", Item(FabricItemSettings().
+        food(ModFoodComponents.tomato)))*/ // Food item
 }

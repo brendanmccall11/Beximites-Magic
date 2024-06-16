@@ -46,6 +46,9 @@ object ModItemGroups {
                 oreBlocks.values.forEach { block ->
                     entries.add(block)
                 }
+
+                // Unused items
+                // entries.add(ModItems.tomato) // Food item
             }
             .build()
     )

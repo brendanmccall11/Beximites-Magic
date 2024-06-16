@@ -110,5 +110,7 @@
   "block.beximitesmagic.death_crystal_ore": "Death Crystal Ore",
   "block.beximitesmagic.deepslate_death_crystal_ore": "Deepslate Death Crystal Ore",
   "block.beximitesmagic.netherrack_death_crystal_ore": "Netherrack Death Crystal Ore",
-  "block.beximitesmagic.end_stone_death_crystal_ore": "End Stone Death Crystal Ore"
+  "block.beximitesmagic.end_stone_death_crystal_ore": "End Stone Death Crystal Ore",
+
+  "item.beximitesmagic.tomato": "Tomato"
 }
