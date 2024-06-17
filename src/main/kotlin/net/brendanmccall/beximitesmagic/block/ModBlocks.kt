@@ -40,9 +40,9 @@ object ModBlocks {
     // Helper functions for getting blocks from maps
     fun getOreBlock(oreType: String?, element: String): Block? {
         return if (oreType != null) {
-            ModBlocks.oreBlocks["${oreType}_${element}_crystal_ore"]
+            oreBlocks["${oreType}_${element}_crystal_ore"]
         } else {
-            ModBlocks.oreBlocks["${element}_crystal_ore"]
+            oreBlocks["${element}_crystal_ore"]
         }
     }
 
@@ -60,4 +60,8 @@ object ModBlocks {
             }
         }
     }
+
+    // Registering unused blocks
+    /*val custom_block: Block = registerBlock("custom_block",
+        CustomBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))*/ // Custom block
 }

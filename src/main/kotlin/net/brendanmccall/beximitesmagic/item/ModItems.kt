@@ -1,6 +1,7 @@
 package net.brendanmccall.beximitesmagic.item
 
 import net.brendanmccall.beximitesmagic.BeximitesMagic
+import net.brendanmccall.beximitesmagic.item.custom.CustomItem
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.Item
 import net.minecraft.registry.Registries
@@ -75,7 +76,9 @@ object ModItems {
         }
     }
 
-    // Registering Unused Items
-    /* val tomato: Item = registerItem("tomato", Item(FabricItemSettings().
+    // Registering unused items
+    //val custom_item: Item = registerItem("custom_item", CustomItem(FabricItemSettings())) // Custom item
+    /*val tomato: Item = registerItem("tomato", Item(FabricItemSettings().
         food(ModFoodComponents.tomato)))*/ // Food item
+    //val coal_briquette: Item = registerItem("coal_briquette", Item(FabricItemSettings())) // Fuel item
 }

@@ -25,6 +25,9 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 blockStateModelGenerator.registerSimpleCubeAll(getOreBlock(oreType, oreElement))
             }
         }
+
+        // Unused blocks
+        //blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.custom_block) // Custom block
     }
 
     // Generate model json files for items
@@ -40,6 +43,8 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         }
 
         // Unused items
-        // itemModelGenerator.register(ModItems.tomato, Models.GENERATED) // Food item
+        //itemModelGenerator.register(ModItems.custom_item, Models.GENERATED) // Custom item
+        //itemModelGenerator.register(ModItems.tomato, Models.GENERATED) // Food item
+        //itemModelGenerator.register(ModItems.coal_briquette, Models.GENERATED) // Fuel item
     }
 }
