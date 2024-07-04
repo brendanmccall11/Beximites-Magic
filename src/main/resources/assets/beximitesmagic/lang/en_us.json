@@ -113,8 +113,8 @@
   "block.beximitesmagic.netherrack_death_crystal_ore": "Netherrack Death Crystal Ore",
   "block.beximitesmagic.end_stone_death_crystal_ore": "End Stone Death Crystal Ore",
 
-  "effect.beximitesmagic.water_soul_effect": "WATER SOUL",
-  "effect.beximitesmagic.water_soul_effect.description": "Your soul is bound to the element of water.",
+  "effect.beximitesmagic.water_soul_effect": "§9§lWATER SOUL",
+  "effect.beximitesmagic.water_soul_effect.description": "§oYour soul is bound to the element of water.",
 
   "tooltip.beximitesmagic.custom_item.tooltip": "Custom Item Tooltip"
 }

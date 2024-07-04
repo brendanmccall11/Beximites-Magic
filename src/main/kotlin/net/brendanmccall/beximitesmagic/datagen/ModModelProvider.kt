@@ -46,6 +46,7 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
         // Unused items
         //itemModelGenerator.register(ModItems.custom_item, Models.GENERATED) // Custom item
+        //itemModelGenerator.register(ModItems.tomato, Models.GENERATED) // Food item
         //itemModelGenerator.register(ModItems.coal_briquette, Models.GENERATED) // Fuel item
     }
 }

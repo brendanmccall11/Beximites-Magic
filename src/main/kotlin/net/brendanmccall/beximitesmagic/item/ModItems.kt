@@ -1,7 +1,7 @@
 package net.brendanmccall.beximitesmagic.item
 
 import net.brendanmccall.beximitesmagic.BeximitesMagic
-import net.brendanmccall.beximitesmagic.item.custom.CustomItem
+import net.brendanmccall.beximitesmagic.effect.ModStatusEffects
 import net.brendanmccall.beximitesmagic.item.custom.SoulItem
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.Item
@@ -19,38 +19,38 @@ object ModItems {
         registerCrystalShardItems()
     }
 
-    fun registerItem(name: String, item: Item): Item {
+    private fun registerItem(name: String, item: Item): Item {
         return Registry.register(Registries.ITEM, Identifier(BeximitesMagic.modID, name), item)
     }
 
     // Initialize maps and lists for staffs, crystals, crystal shards
-    public val materials = listOf("", "iron", "diamond", "netherite")
-    public val elements = listOf("", "standard", "water", "ice", "terra", "fire",
+    val materials = listOf("", "iron", "diamond", "netherite")
+    val elements = listOf("", "standard", "water", "ice", "terra", "fire",
         "mind", "chaos", "order", "spacetime", "life", "death")
-    public val staffItems: MutableMap<String, Item> = mutableMapOf()
-    public val crystalItems: MutableMap<String, Item> = mutableMapOf()
-    public val crystalShardItems: MutableMap<String, Item> = mutableMapOf()
+    val staffItems: MutableMap<String, Item> = mutableMapOf()
+    val crystalItems: MutableMap<String, Item> = mutableMapOf()
+    val crystalShardItems: MutableMap<String, Item> = mutableMapOf()
 
     // Helper functions for getting items from maps
-    public fun getStaffItem(material: String?, element: String?): Item? {
+    fun getStaffItem(material: String?, element: String?): Item? {
         return if (material != null && element != null) {
-            ModItems.staffItems["${material}_${element}_staff"]
+            staffItems["${material}_${element}_staff"]
         }
-        else if (material != null && element == null) {
-            ModItems.staffItems["${material}_staff"]
+        else if (material != null) {
+            staffItems["${material}_staff"]
         }
-        else if (material == null && element != null) {
-            ModItems.staffItems["${element}_staff"]
+        else if (element != null) {
+            staffItems["${element}_staff"]
         }
         else {
-            ModItems.staffItems["staff"]
+            staffItems["staff"]
         }
     }
-    public fun getCrystalItem(element: String): Item? {
-        return ModItems.crystalItems["${element}_crystal"]
+    fun getCrystalItem(element: String): Item? {
+        return crystalItems["${element}_crystal"]
     }
-    public fun getCrystalShardItem(element: String): Item? {
-        return ModItems.crystalShardItems["${element}_crystal_shard"]
+    fun getCrystalShardItem(element: String): Item? {
+        return crystalShardItems["${element}_crystal_shard"]
     }
 
     // Registering Items
@@ -76,10 +76,12 @@ object ModItems {
             crystalShardItems[name] = registerItem(name, Item(FabricItemSettings()))
         }
     }
-    val water_soul: Item = registerItem("water_soul", SoulItem(FabricItemSettings().
-    food(ModFoodComponents.water_soul)))
+    val water_soul: Item = registerItem("water_soul", SoulItem(FabricItemSettings(),
+        ModStatusEffects.water_soul_effect))
 
     // Registering unused items
     //val custom_item: Item = registerItem("custom_item", CustomItem(FabricItemSettings())) // Custom item
+    /*val tomato: Item = registerItem("tomato", Item(FabricItemSettings().
+        food(ModFoodComponents.tomato)))*/ // Food item
     //val coal_briquette: Item = registerItem("coal_briquette", Item(FabricItemSettings())) // Fuel item
 }
