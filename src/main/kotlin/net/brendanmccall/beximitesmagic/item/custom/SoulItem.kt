@@ -15,7 +15,8 @@ class SoulItem(settings: Settings,
         .saturationModifier(0.0f)
         .alwaysEdible()
         .statusEffect(
-            StatusEffectInstance(statusEffect, -1, 0, false, false, true),
+            StatusEffectInstance(
+                statusEffect, -1, 0, false, false, true),
             1.0f
         )
         .build()

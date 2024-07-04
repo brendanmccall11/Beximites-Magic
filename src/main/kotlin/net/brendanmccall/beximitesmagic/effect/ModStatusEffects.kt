@@ -13,6 +13,6 @@ object ModStatusEffects {
 
     @JvmField
     val water_soul_effect = Registry.register(Registries.STATUS_EFFECT,
-        Identifier("beximitesmagic", "water_soul_effect"),
+        Identifier(BeximitesMagic.modID, "water_soul_effect"),
         WaterSoulEffect())
 }

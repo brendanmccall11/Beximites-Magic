@@ -18,7 +18,8 @@ import net.minecraft.util.Identifier
 class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
 
     // Helper functions for using Iron and Diamond to upgrade in smithing table
-    fun offerIronUpgradeRecipe(exporter: RecipeExporter?, input: Item?, category: RecipeCategory?, result: Item?) {
+    private fun offerIronUpgradeRecipe(exporter: RecipeExporter?, input: Item?, category: RecipeCategory?,
+                                       result: Item?) {
         SmithingTransformRecipeJsonBuilder.create(
             Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
             Ingredient.ofItems(input),
@@ -30,7 +31,8 @@ class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output)
         ).criterion("has_iron_ingot", conditionsFromItem(Items.IRON_INGOT))
             .offerTo(exporter, getItemPath(result) + "_smithing")
     }
-    fun offerDiamondUpgradeRecipe(exporter: RecipeExporter?, input: Item?, category: RecipeCategory?, result: Item?) {
+    private fun offerDiamondUpgradeRecipe(exporter: RecipeExporter?, input: Item?, category: RecipeCategory?,
+                                          result: Item?) {
         SmithingTransformRecipeJsonBuilder.create(
             Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
             Ingredient.ofItems(input),

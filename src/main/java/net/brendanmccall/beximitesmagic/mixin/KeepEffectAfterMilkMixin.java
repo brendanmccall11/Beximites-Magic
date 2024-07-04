@@ -13,7 +13,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(MilkBucketItem.class)
 public abstract class KeepEffectAfterMilkMixin {
     @Inject(method = "finishUsing", at = @At("HEAD"), cancellable = true)
-    private void onFinishUsing(ItemStack stack, World world, LivingEntity user, CallbackInfoReturnable<ItemStack> callbackInfo) {
+    private void onFinishUsing(ItemStack stack, World world, LivingEntity user,
+                               CallbackInfoReturnable<ItemStack> callbackInfo) {
         if (!world.isClient()) {
             user.getStatusEffects().removeIf(effect ->
                     !(effect.getEffectType() instanceof WaterSoulEffect)

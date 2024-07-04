@@ -21,7 +21,7 @@ object ModItemGroups {
 
     val beximites_magic_group: ItemGroup = Registry.register(
         Registries.ITEM_GROUP,
-        Identifier(BeximitesMagic.modID, "beximitesmagic"),
+        Identifier(BeximitesMagic.modID, BeximitesMagic.modID),
         FabricItemGroup.builder()
             .displayName(Text.translatable("itemgroup.beximitesmagic"))
             .icon { ItemStack(staffItems["staff"]) }

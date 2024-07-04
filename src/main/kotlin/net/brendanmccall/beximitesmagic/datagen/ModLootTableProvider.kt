@@ -19,7 +19,7 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider
 class ModLootTableProvider(dataOutput: FabricDataOutput) : FabricBlockLootTableProvider(dataOutput) {
 
     // Helper functions to create copper-like ore
-    fun copperLikeOreDrops(drop: Block?, item: Item?, lowerDrop: Float, upperDrop: Float): LootTable.Builder {
+    private fun copperLikeOreDrops(drop: Block?, item: Item?, lowerDrop: Float, upperDrop: Float): LootTable.Builder {
         return BlockLootTableGenerator.dropsWithSilkTouch(
             drop,
             this.applyExplosionDecay(
