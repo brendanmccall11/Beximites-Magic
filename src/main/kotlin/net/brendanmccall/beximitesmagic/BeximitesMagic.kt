@@ -14,10 +14,10 @@ object BeximitesMagic : ModInitializer {
 	override fun onInitialize() {
 		logger.info("Loading Beximite's Magic...")
 
+		ModStatusEffects.registerModStatusEffects()
 		ModItemGroups.registerModItemGroups()
 		ModItems.registerModItems()
 		ModBlocks.registerModBlocks()
-		ModStatusEffects.registerModStatusEffects()
 
 		// Unused Registries
 		//ModFuelComponents.registerModFuelComponents()

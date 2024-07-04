@@ -1,7 +1,7 @@
 package net.brendanmccall.beximitesmagic.item
 
 import net.brendanmccall.beximitesmagic.BeximitesMagic
-import net.brendanmccall.beximitesmagic.effect.ModStatusEffects
+import net.brendanmccall.beximitesmagic.effect.ModStatusEffects.getSoulEffect
 import net.brendanmccall.beximitesmagic.item.custom.SoulItem
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.Item
@@ -17,6 +17,7 @@ object ModItems {
         registerStaffItems()
         registerCrystalItems()
         registerCrystalShardItems()
+        registerSoulItems()
     }
 
     private fun registerItem(name: String, item: Item): Item {
@@ -30,6 +31,7 @@ object ModItems {
     val staffItems: MutableMap<String, Item> = mutableMapOf()
     val crystalItems: MutableMap<String, Item> = mutableMapOf()
     val crystalShardItems: MutableMap<String, Item> = mutableMapOf()
+    val soulItems: MutableMap<String, Item> = mutableMapOf()
 
     // Helper functions for getting items from maps
     fun getStaffItem(material: String?, element: String?): Item? {
@@ -52,8 +54,11 @@ object ModItems {
     fun getCrystalShardItem(element: String): Item? {
         return crystalShardItems["${element}_crystal_shard"]
     }
+    fun getSoulItem(element: String): Item? {
+        return soulItems["${element}_soul"]
+    }
 
-    // Registering Items
+    // Registering items
     private fun registerStaffItems() {
         materials.forEach { staffMaterial ->
             elements.forEach { staffElement ->
@@ -76,8 +81,12 @@ object ModItems {
             crystalShardItems[name] = registerItem(name, Item(FabricItemSettings()))
         }
     }
-    val water_soul: Item = registerItem("water_soul", SoulItem(FabricItemSettings(),
-        ModStatusEffects.water_soul_effect))
+    private fun registerSoulItems() {
+        elements.drop(2).forEach { crystalElement ->
+            val name = "$crystalElement" + "_" + "soul"
+            soulItems[name] = registerItem(name, SoulItem(FabricItemSettings(), getSoulEffect(crystalElement)))
+        }
+    }
 
     // Registering unused items
     //val custom_item: Item = registerItem("custom_item", CustomItem(FabricItemSettings())) // Custom item

@@ -6,6 +6,7 @@ import net.brendanmccall.beximitesmagic.item.ModItems
 import net.brendanmccall.beximitesmagic.item.ModItems.elements
 import net.brendanmccall.beximitesmagic.item.ModItems.getCrystalItem
 import net.brendanmccall.beximitesmagic.item.ModItems.getCrystalShardItem
+import net.brendanmccall.beximitesmagic.item.ModItems.getSoulItem
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
 import net.minecraft.data.client.BlockStateModelGenerator
@@ -37,12 +38,11 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         elements.drop(1).forEach { crystalElement ->
             itemModelGenerator.register(getCrystalItem(crystalElement), Models.GENERATED)
         }
-        // Crystal shard items
+        // Crystal shard items & soul items
         elements.drop(2).forEach { crystalElement ->
             itemModelGenerator.register(getCrystalShardItem(crystalElement), Models.GENERATED)
+            itemModelGenerator.register(getSoulItem(crystalElement), Models.GENERATED)
         }
-        // Soul items
-        itemModelGenerator.register(ModItems.water_soul, Models.GENERATED)
 
         // Unused items
         //itemModelGenerator.register(ModItems.custom_item, Models.GENERATED) // Custom item

@@ -4,6 +4,7 @@ import net.brendanmccall.beximitesmagic.BeximitesMagic
 import net.brendanmccall.beximitesmagic.block.ModBlocks.oreBlocks
 import net.brendanmccall.beximitesmagic.item.ModItems.crystalItems
 import net.brendanmccall.beximitesmagic.item.ModItems.crystalShardItems
+import net.brendanmccall.beximitesmagic.item.ModItems.soulItems
 import net.brendanmccall.beximitesmagic.item.ModItems.staffItems
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.minecraft.item.ItemGroup
@@ -40,7 +41,9 @@ object ModItemGroups {
                 oreBlocks.values.forEach { block ->
                     entries.add(block)
                 }
-                entries.add(ModItems.water_soul)
+                soulItems.values.forEach { item ->
+                    entries.add(item)
+                }
 
                 // Unused items/blocks
                 //entries.add(ModItems.custom_item) // Custom item
