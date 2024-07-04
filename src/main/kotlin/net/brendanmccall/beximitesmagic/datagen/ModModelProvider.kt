@@ -41,10 +41,11 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         elements.drop(2).forEach { crystalElement ->
             itemModelGenerator.register(getCrystalShardItem(crystalElement), Models.GENERATED)
         }
+        // Soul items
+        itemModelGenerator.register(ModItems.water_soul, Models.GENERATED)
 
         // Unused items
         //itemModelGenerator.register(ModItems.custom_item, Models.GENERATED) // Custom item
-        //itemModelGenerator.register(ModItems.tomato, Models.GENERATED) // Food item
         //itemModelGenerator.register(ModItems.coal_briquette, Models.GENERATED) // Fuel item
     }
 }

@@ -46,11 +46,11 @@ object ModItemGroups {
                 oreBlocks.values.forEach { block ->
                     entries.add(block)
                 }
+                entries.add(ModItems.water_soul)
 
                 // Unused items/blocks
                 //entries.add(ModItems.custom_item) // Custom item
                 //entries.add(ModBlocks.custom_block) // Custom block
-                //entries.add(ModItems.tomato) // Food item
                 //entries.add(ModItems.coal_briquette) // Fuel item
             }
             .build()

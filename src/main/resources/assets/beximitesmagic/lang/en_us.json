@@ -70,6 +70,7 @@
   "item.beximitesmagic.spacetime_crystal_shard": "Spacetime Crystal Shard",
   "item.beximitesmagic.life_crystal_shard": "Life Crystal Shard",
   "item.beximitesmagic.death_crystal_shard": "Death Crystal Shard",
+  "item.beximitesmagic.water_soul": "Water Soul",
 
   "block.beximitesmagic.water_crystal_ore": "Water Crystal Ore",
   "block.beximitesmagic.deepslate_water_crystal_ore": "Deepslate Water Crystal Ore",
@@ -111,6 +112,9 @@
   "block.beximitesmagic.deepslate_death_crystal_ore": "Deepslate Death Crystal Ore",
   "block.beximitesmagic.netherrack_death_crystal_ore": "Netherrack Death Crystal Ore",
   "block.beximitesmagic.end_stone_death_crystal_ore": "End Stone Death Crystal Ore",
+
+  "effect.beximitesmagic.water_soul_effect": "WATER SOUL",
+  "effect.beximitesmagic.water_soul_effect.description": "Your soul is bound to the element of water.",
 
   "tooltip.beximitesmagic.custom_item.tooltip": "Custom Item Tooltip"
 }
