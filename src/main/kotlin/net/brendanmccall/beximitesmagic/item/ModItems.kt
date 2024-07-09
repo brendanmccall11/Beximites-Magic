@@ -62,8 +62,8 @@ object ModItems {
     private fun registerStaffItems() {
         materials.forEach { staffMaterial ->
             elements.forEach { staffElement ->
-                val name = "${if (staffMaterial.isNotEmpty()) "$staffMaterial" + "_" else ""}" +
-                        "${if (staffElement.isNotEmpty()) "$staffElement" + "_" else ""}staff"
+                val name = (if (staffMaterial.isNotEmpty()) staffMaterial + "_" else "") +
+                        "${if (staffElement.isNotEmpty()) staffElement + "_" else ""}staff"
                 staffItems[name] = registerItem(name, Item(FabricItemSettings().maxCount(1)))
             }
         }
@@ -71,19 +71,19 @@ object ModItems {
     val crystal: Item = registerItem("crystal", Item(FabricItemSettings()))
     private fun registerCrystalItems() {
         elements.drop(2).forEach { crystalElement ->
-            val name = "$crystalElement" + "_" + "crystal"
+            val name = "${crystalElement}_crystal"
             crystalItems[name] = registerItem(name, Item(FabricItemSettings()))
         }
     }
     private fun registerCrystalShardItems() {
         elements.drop(2).forEach { crystalElement ->
-            val name = "$crystalElement" + "_" + "crystal_shard"
+            val name = "${crystalElement}_crystal_shard"
             crystalShardItems[name] = registerItem(name, Item(FabricItemSettings()))
         }
     }
     private fun registerSoulItems() {
         elements.drop(2).forEach { crystalElement ->
-            val name = "$crystalElement" + "_" + "soul"
+            val name = "${crystalElement}_soul"
             soulItems[name] = registerItem(name, SoulItem(FabricItemSettings(), getSoulEffect(crystalElement)))
         }
     }
