@@ -21,5 +21,8 @@ object BeximitesMagic : ModInitializer {
 
 		// Unused Registries
 		//ModFuelComponents.registerModFuelComponents()
+
+		// Unused Modifiers
+		//ModLootTableModifiers.modifyLootTables()
 	}
 }
