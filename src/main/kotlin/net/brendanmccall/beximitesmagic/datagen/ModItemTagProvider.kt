@@ -9,6 +9,8 @@ class ModItemTagProvider(output: FabricDataOutput, registriesFuture: Completable
     : FabricTagProvider.ItemTagProvider(output, registriesFuture) {
 
     override fun configure(arg: RegistryWrapper.WrapperLookup) {
-
+        // TUTORIAL FOR ARMOR
+        /*getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+            .add(ModItems.ruby_helmet, ModItems.ruby_chestplate, ModItems.ruby_leggings, ModItems.ruby_boots)*/
     }
 }

@@ -84,7 +84,7 @@ class ModEnglishLangProvider(private val dataGenerator: FabricDataOutput)
         // Unused translations
         /*translationBuilder.add(
             "tooltip.${BeximitesMagic.modID}.custom_item.tooltip",
-            "Custom Item Tooltip")*/
+            "Custom Item Tooltip")*/ // Custom Tooltip
 
         // Load the language file
         val existingFilePath = dataGenerator.modContainer

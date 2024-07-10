@@ -93,4 +93,12 @@ object ModItems {
     /*val tomato: Item = registerItem("tomato", Item(FabricItemSettings().
         food(ModFoodComponents.tomato)))*/ // Food item
     //val coal_briquette: Item = registerItem("coal_briquette", Item(FabricItemSettings())) // Fuel item
+    /*val ruby_helmet = registerItem("ruby_helmet",
+        ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.HELMET, FabricItemSettings()))*/ // Helmet item
+    /*val ruby_chestplate = registerItem("ruby_chestplate",
+        ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, FabricItemSettings()))*/ // Chestplate item
+    /*val ruby_leggings = registerItem("ruby_leggings",
+        ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, FabricItemSettings()))*/ // Leggings item
+    /*val ruby_boots = registerItem("ruby_boots",
+        ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.BOOTS, FabricItemSettings()))*/ // Boots item
 }

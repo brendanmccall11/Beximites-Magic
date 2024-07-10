@@ -50,6 +50,10 @@ object ModItemGroups {
                 //entries.add(ModBlocks.custom_block) // Custom block
                 //entries.add(ModItems.tomato) // Food item
                 //entries.add(ModItems.coal_briquette) // Fuel item
+                //entries.add(ModItems.ruby_helmet) // Helmet item
+                //entries.add(ModItems.ruby_chestplate) // Chestplate item
+                //entries.add(ModItems.ruby_leggings) // Leggings item
+                //entries.add(ModItems.ruby_boots) // Boots item
             }
             .build()
     )

@@ -48,5 +48,9 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         //itemModelGenerator.register(ModItems.custom_item, Models.GENERATED) // Custom item
         //itemModelGenerator.register(ModItems.tomato, Models.GENERATED) // Food item
         //itemModelGenerator.register(ModItems.coal_briquette, Models.GENERATED) // Fuel item
+        //itemModelGenerator.registerArmor(ModItems.ruby_helmet as ArmorItem) // Helmet item
+        //itemModelGenerator.registerArmor(ModItems.ruby_chestplate as ArmorItem) // Chestplate item
+        //itemModelGenerator.registerArmor(ModItems.ruby_leggings as ArmorItem) // Leggings item
+        //itemModelGenerator.registerArmor(ModItems.ruby_boots as ArmorItem) // Boots item
     }
 }
