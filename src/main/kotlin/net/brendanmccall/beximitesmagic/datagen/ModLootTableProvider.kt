@@ -18,7 +18,7 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider
 
 class ModLootTableProvider(dataOutput: FabricDataOutput) : FabricBlockLootTableProvider(dataOutput) {
 
-    // Helper functions to create copper-like ore
+    // Helper function to create copper-like ore
     private fun copperLikeOreDrops(drop: Block?, item: Item?, lowerDrop: Float, upperDrop: Float): LootTable.Builder {
         return BlockLootTableGenerator.dropsWithSilkTouch(
             drop,
@@ -110,5 +110,9 @@ class ModLootTableProvider(dataOutput: FabricDataOutput) : FabricBlockLootTableP
             getOreBlock("end_stone", "spacetime"),
             copperLikeOreDrops(getOreBlock("end_stone", "spacetime"),
                 getCrystalShardItem("spacetime"), 1.0f, 2.0f))
+
+        // Unused loot tables
+        //addDrop(ModBlocks.dahlia) // Flower block
+        //addPottedPlantDrops(ModBlocks.potted_dahlia) // Potted flower block
     }
 }

@@ -29,6 +29,8 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
         // Unused blocks
         //blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.custom_block) // Custom block
+        /*blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.dahlia, ModBlocks.potted_dahlia,
+            BlockStateModelGenerator.TintType.NOT_TINTED)*/ // Flower block
     }
 
     // Generate model json files for items

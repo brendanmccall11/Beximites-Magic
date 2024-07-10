@@ -14,6 +14,9 @@ object BeximitesMagic : ModInitializer {
 	override fun onInitialize() {
 		logger.info("Loading Beximite's Magic...")
 
+		BeximitesMagicClient.onInitializeClient() // When client starts
+
+		// Registries
 		ModStatusEffects.registerModStatusEffects()
 		ModItemGroups.registerModItemGroups()
 		ModItems.registerModItems()

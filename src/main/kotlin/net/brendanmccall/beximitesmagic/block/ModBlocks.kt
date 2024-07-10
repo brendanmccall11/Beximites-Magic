@@ -64,4 +64,9 @@ object ModBlocks {
     // Registering unused blocks
     /*val custom_block: Block = registerBlock("custom_block",
         CustomBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))*/ // Custom block
+    /*val dahlia: Block = registerBlock("dahlia", FlowerBlock(StatusEffects.FIRE_RESISTANCE, 20,
+        FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()))*/ // Flower block
+    /*val potted_dahlia: Block = Registry.register(Registries.BLOCK,
+        Identifier(BeximitesMagic.modID, "potted_dahlia"),
+        FlowerPotBlock(dahlia, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()))*/ // Potted flower block
 }

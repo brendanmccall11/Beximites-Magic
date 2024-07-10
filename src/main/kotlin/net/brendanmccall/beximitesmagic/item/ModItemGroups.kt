@@ -54,6 +54,7 @@ object ModItemGroups {
                 //entries.add(ModItems.ruby_chestplate) // Chestplate item
                 //entries.add(ModItems.ruby_leggings) // Leggings item
                 //entries.add(ModItems.ruby_boots) // Boots item
+                //entries.add(ModBlocks.dahlia) // Flower block
             }
             .build()
     )
