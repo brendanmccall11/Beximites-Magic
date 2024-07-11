@@ -12,5 +12,11 @@ class ModItemTagProvider(output: FabricDataOutput, registriesFuture: Completable
         // TUTORIAL FOR ARMOR
         /*getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
             .add(ModItems.ruby_helmet, ModItems.ruby_chestplate, ModItems.ruby_leggings, ModItems.ruby_boots)*/
+
+        // TUTORIAL FOR MUSIC DISK
+        /*getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
+            .add(ModItems.bar_brawl_music_disk)
+        getOrCreateTagBuilder(ItemTags.CREEPER_DROP_MUSIC_DISCS)
+            .add(ModItems.bar_brawl_music_disk)*/
     }
 }

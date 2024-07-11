@@ -101,4 +101,7 @@ object ModItems {
         ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, FabricItemSettings()))*/ // Leggings item
     /*val ruby_boots = registerItem("ruby_boots",
         ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.BOOTS, FabricItemSettings()))*/ // Boots item
+    /*val bar_brawl_music_disk: Item = registerItem("bar_brawl_music_disk",
+        MusicDiscItem(7, ModSounds.bar_brawl,
+            FabricItemSettings().maxCount(1), 122))*/ // Music disk item
 }

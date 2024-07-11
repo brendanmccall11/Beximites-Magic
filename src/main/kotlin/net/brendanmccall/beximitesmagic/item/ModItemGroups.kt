@@ -55,6 +55,7 @@ object ModItemGroups {
                 //entries.add(ModItems.ruby_leggings) // Leggings item
                 //entries.add(ModItems.ruby_boots) // Boots item
                 //entries.add(ModBlocks.dahlia) // Flower block
+                //entries.add(ModItems.bar_brawl_music_disk) // Music disk item
             }
             .build()
     )

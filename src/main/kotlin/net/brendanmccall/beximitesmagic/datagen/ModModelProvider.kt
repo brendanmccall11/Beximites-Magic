@@ -54,5 +54,6 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         //itemModelGenerator.registerArmor(ModItems.ruby_chestplate as ArmorItem) // Chestplate item
         //itemModelGenerator.registerArmor(ModItems.ruby_leggings as ArmorItem) // Leggings item
         //itemModelGenerator.registerArmor(ModItems.ruby_boots as ArmorItem) // Boots item
+        //itemModelGenerator.register(ModItems.bar_brawl_music_disk, Models.GENERATED) // Music disk item
     }
 }
