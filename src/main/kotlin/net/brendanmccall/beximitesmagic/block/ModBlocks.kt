@@ -63,7 +63,8 @@ object ModBlocks {
 
     // Registering unused blocks
     /*val custom_block: Block = registerBlock("custom_block",
-        CustomBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))*/ // Custom block
+        CustomBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).
+        sounds(ModSounds.custom_block_sounds)))*/ // Custom block & custom sounds
     /*val dahlia: Block = registerBlock("dahlia", FlowerBlock(StatusEffects.FIRE_RESISTANCE, 20,
         FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()))*/ // Flower block
     /*val potted_dahlia: Block = Registry.register(Registries.BLOCK,
