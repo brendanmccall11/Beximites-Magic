@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "beximitesmagic:item/water_crystal_shard"
+  }
+}

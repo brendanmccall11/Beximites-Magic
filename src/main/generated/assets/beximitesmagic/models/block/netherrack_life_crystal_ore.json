@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "beximitesmagic:block/netherrack_life_crystal_ore"
+  }
+}

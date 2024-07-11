@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_death_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beximitesmagic:death_crystal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_netherite_staff": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beximitesmagic:netherite_staff"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:netherite_death_staff"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_netherite_staff",
+      "has_death_crystal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:netherite_death_staff"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "beximitesmagic:chaos_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:chaos_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:chaos_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:chaos_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:chaos_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:chaos_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:chaos_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:chaos_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:chaos_crystal_shard"
+    }
+  ],
+  "result": {
+    "item": "beximitesmagic:chaos_crystal"
+  }
+}

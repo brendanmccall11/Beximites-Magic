@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "beximitesmagic:block/end_stone_spacetime_crystal_ore"
+  }
+}

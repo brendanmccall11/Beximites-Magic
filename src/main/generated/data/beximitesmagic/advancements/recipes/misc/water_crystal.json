@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "beximitesmagic:water_crystal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_water_crystal_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beximitesmagic:water_crystal_shard"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_water_crystal_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "beximitesmagic:water_crystal"
+    ]
+  }
+}

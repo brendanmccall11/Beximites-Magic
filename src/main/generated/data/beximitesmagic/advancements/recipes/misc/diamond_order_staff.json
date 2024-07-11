@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_diamond_staff": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beximitesmagic:diamond_staff"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_order_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beximitesmagic:order_crystal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:diamond_order_staff"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_diamond_staff",
+      "has_order_crystal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:diamond_order_staff"
+    ]
+  }
+}

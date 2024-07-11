@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_iron_staff": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beximitesmagic:iron_staff"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_order_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beximitesmagic:order_crystal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:iron_order_staff"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_iron_staff",
+      "has_order_crystal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:iron_order_staff"
+    ]
+  }
+}

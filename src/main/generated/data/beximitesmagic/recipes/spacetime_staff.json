@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "beximitesmagic:staff"
+    },
+    {
+      "item": "beximitesmagic:spacetime_crystal"
+    }
+  ],
+  "result": {
+    "item": "beximitesmagic:spacetime_staff"
+  }
+}

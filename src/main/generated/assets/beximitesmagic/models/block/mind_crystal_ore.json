@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "beximitesmagic:block/mind_crystal_ore"
+  }
+}

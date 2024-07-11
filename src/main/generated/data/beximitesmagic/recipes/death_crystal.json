@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "beximitesmagic:death_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:death_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:death_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:death_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:death_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:death_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:death_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:death_crystal_shard"
+    },
+    {
+      "item": "beximitesmagic:death_crystal_shard"
+    }
+  ],
+  "result": {
+    "item": "beximitesmagic:death_crystal"
+  }
+}
