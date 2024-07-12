@@ -7,6 +7,7 @@ import net.brendanmccall.beximitesmagic.item.ModItems
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 
+
 object BeximitesMagic : ModInitializer {
 	val modID = "beximitesmagic"
 	val logger = LoggerFactory.getLogger(modID)

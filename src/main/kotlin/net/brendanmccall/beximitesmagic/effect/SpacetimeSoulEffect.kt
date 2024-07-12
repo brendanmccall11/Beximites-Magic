@@ -11,7 +11,7 @@ class SpacetimeSoulEffect : StatusEffect(StatusEffectCategory.BENEFICIAL, 0xFFFF
     }
 
     // Custom logic for when effect is applied
-    override fun applyUpdateEffect(entity: LivingEntity?, amplifier: Int) {
-
+    override fun applyUpdateEffect(entity: LivingEntity?, amplifier: Int): Boolean {
+        return true
     }
 }

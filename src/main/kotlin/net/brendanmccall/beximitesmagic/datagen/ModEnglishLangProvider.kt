@@ -6,9 +6,13 @@ import net.brendanmccall.beximitesmagic.item.ModItems.elements
 import net.brendanmccall.beximitesmagic.item.ModItems.materials
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
+import net.minecraft.registry.RegistryWrapper
+import java.util.concurrent.CompletableFuture
 
-class ModEnglishLangProvider(private val dataGenerator: FabricDataOutput)
-    : FabricLanguageProvider(dataGenerator, "en_us") {
+class ModEnglishLangProvider(
+    private val dataGenerator: FabricDataOutput,
+    registryFuture: CompletableFuture<RegistryWrapper.WrapperLookup>
+) : FabricLanguageProvider(dataGenerator, registryFuture) {
 
     // Capitalize the first letter of each word in a name
     private fun String.titleCase(): String {
@@ -16,7 +20,8 @@ class ModEnglishLangProvider(private val dataGenerator: FabricDataOutput)
         { it.replaceFirstChar { char -> char.uppercase() } }
     }
 
-    override fun generateTranslations(translationBuilder: TranslationBuilder) {
+    override fun generateTranslations(registryLookup: RegistryWrapper.WrapperLookup,
+                                      translationBuilder: TranslationBuilder) {
         // List for soul effect
         val soulEffectNames = listOf("§9§lWater", "§b§lIce", "§2§lTerra", "§4§lFire", "§e§lMind", "§6§lChaos",
             "§7§lOrder", "§5§lSpacetime", "§d§lLife", "§8§lDeath")

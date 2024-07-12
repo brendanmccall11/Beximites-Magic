@@ -2,8 +2,7 @@ package net.brendanmccall.beximitesmagic.block
 
 import net.brendanmccall.beximitesmagic.BeximitesMagic
 import net.brendanmccall.beximitesmagic.item.ModItems.elements
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings
-import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
+import net.minecraft.block.AbstractBlock
 import net.minecraft.block.Block
 import net.minecraft.block.Blocks
 import net.minecraft.block.ExperienceDroppingBlock
@@ -24,13 +23,13 @@ object ModBlocks {
     }
 
     private fun registerBlockItem(name: String, block: Block): Item {
-        return Registry.register(Registries.ITEM, Identifier(BeximitesMagic.modID, name),
-            BlockItem(block, FabricItemSettings()))
+        return Registry.register(Registries.ITEM, Identifier.of(BeximitesMagic.modID, name),
+            BlockItem(block, Item.Settings()))
     }
 
     private fun registerBlock(name: String, block: Block): Block {
         registerBlockItem(name, block)
-        return Registry.register(Registries.BLOCK, Identifier(BeximitesMagic.modID, name), block)
+        return Registry.register(Registries.BLOCK, Identifier.of(BeximitesMagic.modID, name), block)
     }
 
     // Initialize maps and lists for ore blocks
@@ -54,7 +53,7 @@ object ModBlocks {
                         "${oreElement}_crystal_ore"
                 oreBlocks[name] = registerBlock(name,
                     ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
-                        FabricBlockSettings.copyOf(Blocks.STONE)
+                        AbstractBlock.Settings.copy(Blocks.STONE)
                             .strength(3.5f)
                             .sounds(BlockSoundGroup.AMETHYST_BLOCK)))
             }

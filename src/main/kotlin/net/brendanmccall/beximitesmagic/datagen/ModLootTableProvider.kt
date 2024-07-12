@@ -7,26 +7,33 @@ import net.brendanmccall.beximitesmagic.item.ModItems.getCrystalShardItem
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider
 import net.minecraft.block.Block
-import net.minecraft.data.server.loottable.BlockLootTableGenerator
 import net.minecraft.enchantment.Enchantments
 import net.minecraft.item.Item
 import net.minecraft.loot.LootTable
 import net.minecraft.loot.entry.ItemEntry
+import net.minecraft.loot.entry.LootPoolEntry
 import net.minecraft.loot.function.ApplyBonusLootFunction
 import net.minecraft.loot.function.SetCountLootFunction
 import net.minecraft.loot.provider.number.UniformLootNumberProvider
+import net.minecraft.registry.RegistryKeys
+import net.minecraft.registry.RegistryWrapper
+import java.util.concurrent.CompletableFuture
 
-class ModLootTableProvider(dataOutput: FabricDataOutput) : FabricBlockLootTableProvider(dataOutput) {
+class ModLootTableProvider(dataOutput: FabricDataOutput,
+                           registryLookup: CompletableFuture<RegistryWrapper.WrapperLookup>?
+) : FabricBlockLootTableProvider(dataOutput, registryLookup) {
 
     // Helper function to create copper-like ore
     private fun copperLikeOreDrops(drop: Block?, item: Item?, lowerDrop: Float, upperDrop: Float): LootTable.Builder {
-        return BlockLootTableGenerator.dropsWithSilkTouch(
+        val impl = registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT)
+        return this.dropsWithSilkTouch(
             drop,
-            this.applyExplosionDecay(
+            applyExplosionDecay(
                 drop,
                 ItemEntry.builder(item)
                     .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(lowerDrop, upperDrop)))
-            ).apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))
+                    .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))
+            ) as LootPoolEntry.Builder<*>
         )
     }
 

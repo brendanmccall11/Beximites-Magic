@@ -11,7 +11,7 @@ class MindSoulEffect : StatusEffect(StatusEffectCategory.BENEFICIAL, 0xFFFFFF) {
     }
 
     // Custom logic for when effect is applied
-    override fun applyUpdateEffect(entity: LivingEntity?, amplifier: Int) {
-
+    override fun applyUpdateEffect(entity: LivingEntity?, amplifier: Int): Boolean {
+        return true
     }
 }

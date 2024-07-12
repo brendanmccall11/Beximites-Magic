@@ -1,9 +1,9 @@
 package net.brendanmccall.beximitesmagic.item
 
 /*import net.brendanmccall.beximitesmagic.BeximitesMagic
-import net.minecraft.item.ArmorItem*/
+import net.minecraft.item.ArmorItem
 import net.minecraft.item.ArmorMaterial
-/*import net.minecraft.recipe.Ingredient
+import net.minecraft.recipe.Ingredient
 import net.minecraft.sound.SoundEvent
 import net.minecraft.sound.SoundEvents*/
 
@@ -17,7 +17,7 @@ enum class ModArmorMaterials(
     private val toughness: Float,
     private val knockbackResistance: Float,
     private val repairIngredient: () -> Ingredient*/
-) : ArmorMaterial {
+)/* : ArmorMaterial*/ {
 
     /*RUBY(
         "ruby", 25, intArrayOf(3, 8, 6, 3), 19,

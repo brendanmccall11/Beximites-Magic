@@ -13,9 +13,13 @@ import net.minecraft.item.Item
 import net.minecraft.item.Items
 import net.minecraft.recipe.Ingredient
 import net.minecraft.recipe.book.RecipeCategory
+import net.minecraft.registry.RegistryWrapper
 import net.minecraft.util.Identifier
+import java.util.concurrent.CompletableFuture
 
-class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
+class ModRecipeProvider(output: FabricDataOutput,
+                        registriesFuture: CompletableFuture<RegistryWrapper.WrapperLookup>?
+) : FabricRecipeProvider(output, registriesFuture) {
 
     // Helper functions for using Iron and Diamond to upgrade in smithing table
     private fun offerIronUpgradeRecipe(exporter: RecipeExporter?, input: Item?, category: RecipeCategory?,
@@ -54,7 +58,7 @@ class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output)
             .pattern("  #")
             .input('#', Items.STICK)
             .criterion(hasItem(Items.STICK), RecipeProvider.conditionsFromItem(Items.STICK))
-            .offerTo(exporter, Identifier(getRecipeName(getStaffItem(null, null))))
+            .offerTo(exporter, Identifier.of(getRecipeName(getStaffItem(null, null))))
 
         // Elemental staff crafting recipes
         // Wooden staff
@@ -71,7 +75,7 @@ class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output)
                     hasItem(getCrystalItem(crystalElement)),
                     RecipeProvider.conditionsFromItem(getCrystalItem(crystalElement))
                 )
-                .offerTo(exporter, Identifier(getRecipeName(getStaffItem(null, crystalElement))))
+                .offerTo(exporter, Identifier.of(getRecipeName(getStaffItem(null, crystalElement))))
         }
         // Iron, Diamond, Netherite staffs
         materials.drop(1).forEach { staffMaterial ->
@@ -88,7 +92,7 @@ class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output)
                         hasItem(getCrystalItem(crystalElement)),
                         RecipeProvider.conditionsFromItem(getCrystalItem(crystalElement))
                     )
-                    .offerTo(exporter, Identifier(getRecipeName(getStaffItem(staffMaterial, crystalElement))))
+                    .offerTo(exporter, Identifier.of(getRecipeName(getStaffItem(staffMaterial, crystalElement))))
             }
         }
 
@@ -128,7 +132,7 @@ class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output)
             crystalRecipe.criterion(hasItem(getCrystalShardItem(crystalElement)),
                 RecipeProvider.conditionsFromItem(getCrystalShardItem(crystalElement)))
         }
-        crystalRecipe.offerTo(exporter, Identifier(getRecipeName(ModItems.crystal)))
+        crystalRecipe.offerTo(exporter, Identifier.of(getRecipeName(ModItems.crystal)))
         // Elemental crystals
         elements.drop(2).forEach { crystalElement ->
             offerCompactingRecipe(exporter, RecipeCategory.MISC,

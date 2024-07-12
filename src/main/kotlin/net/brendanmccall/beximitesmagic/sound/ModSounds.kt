@@ -13,7 +13,7 @@ object ModSounds {
     }
 
     private fun registerSoundEvent(name: String): SoundEvent {
-        val id = Identifier(BeximitesMagic.modID, name)
+        val id = Identifier.of(BeximitesMagic.modID, name)
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id))
     }
 

@@ -1,11 +1,10 @@
 {
 	"required": true,
 	"package": "net.brendanmccall.beximitesmagic.mixin",
-	"compatibilityLevel": "JAVA_17",
+	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"KeepEffectAfterItemUseMixin",
-		"StatusEffectRemovalInvoker",
-		"KeepEffectAfterDeathMixin"
+		"KeepEffectAfterDeathMixin",
+		"KeepEffectAfterItemUseMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

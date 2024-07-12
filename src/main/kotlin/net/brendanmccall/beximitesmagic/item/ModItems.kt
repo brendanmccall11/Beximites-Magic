@@ -3,7 +3,6 @@ package net.brendanmccall.beximitesmagic.item
 import net.brendanmccall.beximitesmagic.BeximitesMagic
 import net.brendanmccall.beximitesmagic.effect.ModStatusEffects.getSoulEffect
 import net.brendanmccall.beximitesmagic.item.custom.SoulItem
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.Item
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
@@ -21,7 +20,7 @@ object ModItems {
     }
 
     private fun registerItem(name: String, item: Item): Item {
-        return Registry.register(Registries.ITEM, Identifier(BeximitesMagic.modID, name), item)
+        return Registry.register(Registries.ITEM, Identifier.of(BeximitesMagic.modID, name), item)
     }
 
     // Initialize maps and lists for staffs, crystals, crystal shards
@@ -64,27 +63,27 @@ object ModItems {
             elements.forEach { staffElement ->
                 val name = (if (staffMaterial.isNotEmpty()) staffMaterial + "_" else "") +
                         "${if (staffElement.isNotEmpty()) staffElement + "_" else ""}staff"
-                staffItems[name] = registerItem(name, Item(FabricItemSettings().maxCount(1)))
+                staffItems[name] = registerItem(name, Item(Item.Settings().maxCount(1)))
             }
         }
     }
-    val crystal: Item = registerItem("crystal", Item(FabricItemSettings()))
+    val crystal: Item = registerItem("crystal", Item(Item.Settings()))
     private fun registerCrystalItems() {
         elements.drop(2).forEach { crystalElement ->
             val name = "${crystalElement}_crystal"
-            crystalItems[name] = registerItem(name, Item(FabricItemSettings()))
+            crystalItems[name] = registerItem(name, Item(Item.Settings()))
         }
     }
     private fun registerCrystalShardItems() {
         elements.drop(2).forEach { crystalElement ->
             val name = "${crystalElement}_crystal_shard"
-            crystalShardItems[name] = registerItem(name, Item(FabricItemSettings()))
+            crystalShardItems[name] = registerItem(name, Item(Item.Settings()))
         }
     }
     private fun registerSoulItems() {
         elements.drop(2).forEach { crystalElement ->
             val name = "${crystalElement}_soul"
-            soulItems[name] = registerItem(name, SoulItem(FabricItemSettings(), getSoulEffect(crystalElement)))
+            soulItems[name] = registerItem(name, SoulItem(Item.Settings(), getSoulEffect(crystalElement)))
         }
     }
 

@@ -32,7 +32,7 @@ object ModStatusEffects {
         elements.drop(2).forEach { crystalElement ->
             val name = crystalElement + "_" + "soul_effect"
             soulEffects[name] = Registry.register(Registries.STATUS_EFFECT,
-                Identifier(BeximitesMagic.modID, name),
+                Identifier.of(BeximitesMagic.modID, name),
                 effects[effectNumber])
             effectNumber++
         }
