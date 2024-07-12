@@ -4,7 +4,9 @@ import net.brendanmccall.beximitesmagic.block.ModBlocks
 import net.brendanmccall.beximitesmagic.effect.ModStatusEffects
 import net.brendanmccall.beximitesmagic.item.ModItemGroups
 import net.brendanmccall.beximitesmagic.item.ModItems
+import net.fabricmc.api.EnvType
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.loader.api.FabricLoader
 import org.slf4j.LoggerFactory
 
 
@@ -15,10 +17,13 @@ object BeximitesMagic : ModInitializer {
 	override fun onInitialize() {
 		logger.info("Loading Beximite's Magic...")
 
-		BeximitesMagicClient.onInitializeClient() // When client starts
+		// Only render on the client
+		if (FabricLoader.getInstance().environmentType == EnvType.CLIENT) {
+			BeximitesMagicClient.onInitializeClient()
+		}
 
 		// Registries
-		ModStatusEffects.registerModStatusEffects()
+		ModStatusEffects.registerModStatusEffects() // WARNING: PUT BEFORE ITEM REGISTRY
 		ModItemGroups.registerModItemGroups()
 		ModItems.registerModItems()
 		ModBlocks.registerModBlocks()
@@ -26,6 +31,7 @@ object BeximitesMagic : ModInitializer {
 		// Unused Registries
 		//ModFuelComponents.registerModFuelComponents()
 		//ModSounds.registerSounds()
+		//ModEntities.registerModEntities()
 
 		// Unused Modifiers
 		//ModLootTableModifiers.modifyLootTables()

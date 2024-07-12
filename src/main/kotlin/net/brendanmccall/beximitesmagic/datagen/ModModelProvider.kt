@@ -55,5 +55,7 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         //itemModelGenerator.registerArmor(ModItems.ruby_leggings as ArmorItem) // Leggings item
         //itemModelGenerator.registerArmor(ModItems.ruby_boots as ArmorItem) // Boots item
         //itemModelGenerator.register(ModItems.bar_brawl_music_disk, Models.GENERATED) // Music disk item
+        /*itemModelGenerator.register(ModItems.porcupine_spawn_egg,
+            Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()))*/ // Spawn egg item
     }
 }

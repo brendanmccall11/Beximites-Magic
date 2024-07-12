@@ -1,4 +1,4 @@
-// 1.21	2024-07-12T10:09:30.144285	Beximite's Magic/Block Loot Tables
+// 1.21	2024-07-12T17:24:30.216873	Beximite's Magic/Block Loot Tables
 6759c7ae90f28701f1f4a7e37c0ef363a11fa1e9 data/beximitesmagic/loot_table/blocks/netherrack_terra_crystal_ore.json
 db9357813bbf3b05b5c53ad73bd51985a6cc700c data/beximitesmagic/loot_table/blocks/netherrack_mind_crystal_ore.json
 e30a285b909de8c1b8d43779a8b7a2f5722df52a data/beximitesmagic/loot_table/blocks/end_stone_life_crystal_ore.json
@@ -32,8 +32,8 @@ df1d2601a440194fe3d5742852a9a51b88da8f7b data/beximitesmagic/loot_table/blocks/e
 9e9e00a4e933dfbef1a326c227c11ef77b99ea42 data/beximitesmagic/loot_table/blocks/spacetime_crystal_ore.json
 d685b146f8f77c1054c307cc461f3c892ae26144 data/beximitesmagic/loot_table/blocks/end_stone_water_crystal_ore.json
 d2eadc4f6644c246a6197e258f3efaf05e0fae38 data/beximitesmagic/loot_table/blocks/end_stone_death_crystal_ore.json
-e138291970b6ea134b9f744e8e4353967ce5c4b3 data/beximitesmagic/loot_table/blocks/ice_crystal_ore.json
 e13a8141e8b6a698c74a39a67a7eece56201ea5f data/beximitesmagic/loot_table/blocks/end_stone_ice_crystal_ore.json
+e138291970b6ea134b9f744e8e4353967ce5c4b3 data/beximitesmagic/loot_table/blocks/ice_crystal_ore.json
 ce1f61fb214af7e4b0c9398ab1752a9f1eddd7e9 data/beximitesmagic/loot_table/blocks/terra_crystal_ore.json
 50d3583890d85253d23be1e649077b45c308cf3b data/beximitesmagic/loot_table/blocks/mind_crystal_ore.json
 f9ee6d571d7796dd92fded983e532589e9aab22f data/beximitesmagic/loot_table/blocks/chaos_crystal_ore.json

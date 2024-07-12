@@ -103,4 +103,7 @@ object ModItems {
     /*val bar_brawl_music_disk: Item = registerItem("bar_brawl_music_disk",
         MusicDiscItem(7, ModSounds.bar_brawl,
             FabricItemSettings().maxCount(1), 122))*/ // Music disk item
+    /*val porcupine_spawn_egg: Item = registerItem("porcupine_spawn_egg",
+        SpawnEggItem(ModEntities.porcupine,
+            0xa86518, 0x3b260f, Item.Settings()))*/ // Spawn egg item
 }
