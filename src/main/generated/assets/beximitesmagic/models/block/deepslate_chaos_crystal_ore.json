@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "beximitesmagic:block/deepslate_chaos_crystal_ore"
-  }
-}

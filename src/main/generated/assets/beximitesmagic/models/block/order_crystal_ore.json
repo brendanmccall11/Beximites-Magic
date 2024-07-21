@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "beximitesmagic:block/order_crystal_ore"
-  }
-}
