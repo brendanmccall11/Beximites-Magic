@@ -11,8 +11,8 @@ import java.util.concurrent.CompletableFuture
 
 class ModEnglishLangProvider(
     private val dataGenerator: FabricDataOutput,
-    registryFuture: CompletableFuture<RegistryWrapper.WrapperLookup>
-) : FabricLanguageProvider(dataGenerator, registryFuture) {
+    registryFuture: CompletableFuture<RegistryWrapper.WrapperLookup>)
+    : FabricLanguageProvider(dataGenerator, registryFuture) {
 
     // Capitalize the first letter of each word in a name
     private fun String.titleCase(): String {
@@ -56,6 +56,8 @@ class ModEnglishLangProvider(
                 "item.${BeximitesMagic.modID}.${element}_soul",
                 "$elementCaseName Soul")
         }
+        // Spawn egg
+        translationBuilder.add("item.${BeximitesMagic.modID}.deer_spawn_egg", "Deer Spawn Egg")
         // Ore blocks
         oreTypes.forEach { oreType ->
             var oreTypeCaseName = oreType.titleCase()

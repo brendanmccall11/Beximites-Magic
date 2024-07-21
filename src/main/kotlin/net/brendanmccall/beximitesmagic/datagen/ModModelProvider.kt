@@ -11,7 +11,10 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
 import net.minecraft.data.client.BlockStateModelGenerator
 import net.minecraft.data.client.ItemModelGenerator
+import net.minecraft.data.client.Model
 import net.minecraft.data.client.Models
+import net.minecraft.util.Identifier
+import java.util.*
 
 class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
@@ -45,6 +48,10 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             itemModelGenerator.register(getCrystalShardItem(crystalElement), Models.GENERATED)
             itemModelGenerator.register(getSoulItem(crystalElement), Models.GENERATED)
         }
+        // Spawn egg item
+        itemModelGenerator.register(ModItems.deer_spawn_egg,
+            Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty())
+        )
 
         // Unused items
         //itemModelGenerator.register(ModItems.custom_item, Models.GENERATED) // Custom item
@@ -57,5 +64,6 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         //itemModelGenerator.register(ModItems.bar_brawl_music_disk, Models.GENERATED) // Music disk item
         /*itemModelGenerator.register(ModItems.porcupine_spawn_egg,
             Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()))*/ // Spawn egg item
+
     }
 }

@@ -2,8 +2,10 @@ package net.brendanmccall.beximitesmagic.item
 
 import net.brendanmccall.beximitesmagic.BeximitesMagic
 import net.brendanmccall.beximitesmagic.effect.ModStatusEffects.getSoulEffect
+import net.brendanmccall.beximitesmagic.entity.ModEntities
 import net.brendanmccall.beximitesmagic.item.custom.SoulItem
 import net.minecraft.item.Item
+import net.minecraft.item.SpawnEggItem
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
@@ -86,6 +88,10 @@ object ModItems {
             soulItems[name] = registerItem(name, SoulItem(Item.Settings(), getSoulEffect(crystalElement)))
         }
     }
+    val deer_spawn_egg: Item = registerItem("deer_spawn_egg",
+        SpawnEggItem(ModEntities.deer,
+            0x9F7444, 0xC1C1C1, Item.Settings())
+    )
 
     // Registering unused items
     //val custom_item: Item = registerItem("custom_item", CustomItem(FabricItemSettings())) // Custom item

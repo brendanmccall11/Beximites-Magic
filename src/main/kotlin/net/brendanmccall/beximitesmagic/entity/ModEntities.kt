@@ -23,5 +23,5 @@ object ModEntities {
         EntityType.Builder.create(::PorcupineEntity, SpawnGroup.CREATURE).dimensions(1.0f, 1.0f).build())*/
     val deer: EntityType<DeerEntity> = Registry.register(Registries.ENTITY_TYPE,
         Identifier.of(BeximitesMagic.modID, "deer"),
-        EntityType.Builder.create(::DeerEntity, SpawnGroup.CREATURE).dimensions(1.0f, 1.0f).build())
+        EntityType.Builder.create(::DeerEntity, SpawnGroup.CREATURE).dimensions(0.8f, 2.0f).build())
 }

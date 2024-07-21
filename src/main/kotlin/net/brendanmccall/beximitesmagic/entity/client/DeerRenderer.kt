@@ -12,7 +12,7 @@ class DeerRenderer(context: EntityRendererFactory.Context) :
     MobEntityRenderer<DeerEntity, DeerModel<DeerEntity>>(
         context,
         DeerModel(context.getPart(ModModelLayers.deer)),
-        0.6f
+        0.5f
     ) {
 
     companion object {

@@ -44,6 +44,7 @@ object ModItemGroups {
                 soulItems.values.forEach { item ->
                     entries.add(item)
                 }
+                entries.add(ModItems.deer_spawn_egg)
 
                 // Unused items/blocks
                 //entries.add(ModItems.custom_item) // Custom item

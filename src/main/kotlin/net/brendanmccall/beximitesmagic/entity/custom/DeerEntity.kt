@@ -55,9 +55,9 @@ class DeerEntity(entityType: EntityType<out AnimalEntity>, world: World) : Anima
         goalSelector.add(1, AnimalMateGoal(this, 1.15))
         goalSelector.add(2, TemptGoal(this, 1.25, Ingredient.ofItems(Items.APPLE), false))
         goalSelector.add(3, FollowParentGoal(this, 1.15))
-        goalSelector.add(4, WanderAroundFarGoal(this, 1.0))
+        goalSelector.add(4, LookAroundGoal(this))
         goalSelector.add(5, LookAtEntityGoal(this, PlayerEntity::class.java, 4f))
-        goalSelector.add(6, LookAroundGoal(this))
+        goalSelector.add(6, WanderAroundFarGoal(this, 1.0))
     }
 
     override fun isBreedingItem(stack: ItemStack): Boolean {
@@ -83,10 +83,9 @@ class DeerEntity(entityType: EntityType<out AnimalEntity>, world: World) : Anima
     companion object {
         fun createPorcupineAttributes(): DefaultAttributeContainer.Builder {
             return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 15.0)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2)
                 .add(EntityAttributes.GENERIC_ARMOR, 0.5)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0)
         }
 
         fun canSpawn(type: EntityType<DeerEntity>, world: ServerWorldAccess, spawnReason: SpawnReason, pos: BlockPos,

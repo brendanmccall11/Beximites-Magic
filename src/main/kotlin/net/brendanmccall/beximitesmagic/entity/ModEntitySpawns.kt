@@ -15,7 +15,7 @@ object ModEntitySpawns {
     fun registerEntitySpawns() {
         BeximitesMagic.logger.info("Registering Mod Entity Spawns for ${BeximitesMagic.modID}")
 
-        registerDeerSpawns
+        registerDeerSpawns.registerDeerSpawn()
     }
 
     object registerDeerSpawns {
@@ -28,10 +28,10 @@ object ModEntitySpawns {
             )
 
             BiomeModifications.addSpawn(
-                BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.DARK_FOREST, BiomeKeys.BIRCH_FOREST),
+                BiomeSelectors.includeByKey(BiomeKeys.SAVANNA),
                 SpawnGroup.CREATURE,
                 ModEntities.deer,
-                60,
+                10,
                 1,
                 3
             )
