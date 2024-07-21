@@ -1,11 +1,11 @@
 package net.brendanmccall.beximitesmagic.entity.custom
 
 import net.brendanmccall.beximitesmagic.entity.ModEntities
-import net.minecraft.block.Blocks
+/*import net.minecraft.block.Blocks
 import net.minecraft.entity.AnimationState
-import net.minecraft.entity.EntityPose
+import net.minecraft.entity.EntityPose*/
 import net.minecraft.entity.EntityType
-import net.minecraft.entity.SpawnReason
+//import net.minecraft.entity.SpawnReason
 import net.minecraft.entity.ai.goal.*
 import net.minecraft.entity.attribute.DefaultAttributeContainer
 import net.minecraft.entity.attribute.EntityAttributes
@@ -20,9 +20,9 @@ import net.minecraft.recipe.Ingredient
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.sound.SoundEvent
 import net.minecraft.sound.SoundEvents
-import net.minecraft.util.math.BlockPos
+/*import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.random.Random
-import net.minecraft.world.ServerWorldAccess
+import net.minecraft.world.ServerWorldAccess*/
 import net.minecraft.world.World
 
 class DeerEntity(entityType: EntityType<out AnimalEntity>, world: World) : AnimalEntity(entityType, world) {
@@ -88,10 +88,10 @@ class DeerEntity(entityType: EntityType<out AnimalEntity>, world: World) : Anima
                 .add(EntityAttributes.GENERIC_ARMOR, 0.5)
         }
 
-        fun canSpawn(type: EntityType<DeerEntity>, world: ServerWorldAccess, spawnReason: SpawnReason, pos: BlockPos,
+        /*fun canSpawn(type: EntityType<DeerEntity>, world: ServerWorldAccess, spawnReason: SpawnReason, pos: BlockPos,
                      random: Random): Boolean {
             val blockState = world.getBlockState(pos.down())
             return blockState.isOf(Blocks.GRASS_BLOCK) && world.getBaseLightLevel(pos, 0) > 8
-        }
+        }*/
     }
 }
