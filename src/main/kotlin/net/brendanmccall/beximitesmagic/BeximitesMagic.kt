@@ -2,6 +2,8 @@ package net.brendanmccall.beximitesmagic
 
 import net.brendanmccall.beximitesmagic.block.ModBlocks
 import net.brendanmccall.beximitesmagic.effect.ModStatusEffects
+import net.brendanmccall.beximitesmagic.entity.ModEntities
+import net.brendanmccall.beximitesmagic.entity.ModEntitySpawns
 import net.brendanmccall.beximitesmagic.item.ModItemGroups
 import net.brendanmccall.beximitesmagic.item.ModItems
 import net.fabricmc.api.EnvType
@@ -27,11 +29,12 @@ object BeximitesMagic : ModInitializer {
 		ModItemGroups.registerModItemGroups()
 		ModItems.registerModItems()
 		ModBlocks.registerModBlocks()
+		ModEntities.registerModEntities()
+		ModEntitySpawns.registerEntitySpawns()
 
 		// Unused Registries
 		//ModFuelComponents.registerModFuelComponents()
 		//ModSounds.registerSounds()
-		//ModEntities.registerModEntities()
 
 		// Unused Modifiers
 		//ModLootTableModifiers.modifyLootTables()

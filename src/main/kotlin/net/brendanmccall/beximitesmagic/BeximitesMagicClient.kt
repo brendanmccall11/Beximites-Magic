@@ -1,13 +1,14 @@
 package net.brendanmccall.beximitesmagic
 
 //import net.brendanmccall.beximitesmagic.block.ModBlocks
-/*import net.brendanmccall.beximitesmagic.entity.ModEntities
+import net.brendanmccall.beximitesmagic.entity.ModEntities
 import net.brendanmccall.beximitesmagic.entity.client.ModModelLayers
-import net.brendanmccall.beximitesmagic.entity.client.PorcupineModel
-import net.brendanmccall.beximitesmagic.entity.client.PorcupineRenderer*/
+import net.brendanmccall.beximitesmagic.entity.client.DeerRenderer
 import net.fabricmc.api.ClientModInitializer
-/*import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry*/
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
+import net.brendanmccall.beximitesmagic.entity.client.DeerModel
+
 /*import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
 import net.minecraft.client.render.RenderLayer*/
 
@@ -21,5 +22,7 @@ object BeximitesMagicClient : ClientModInitializer {
         /*EntityModelLayerRegistry.registerModelLayer(ModModelLayers.porcupine)
         { PorcupineModel.getTexturedModelData() }
         EntityRendererRegistry.register(ModEntities.porcupine) { context -> PorcupineRenderer(context) }*/
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.deer) { DeerModel.getTexturedModelData() }
+        EntityRendererRegistry.register(ModEntities.deer) { context -> DeerRenderer(context) }
     }
 }
